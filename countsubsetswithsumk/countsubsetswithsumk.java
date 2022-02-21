@@ -76,25 +76,24 @@ public class countsubsetswithsumk
 {
 	public static void main(String[] args)
 	{
-		int arr[]= {1,2,3};
-		int sum=3;
+		int arr[]= {2,2,3};
+		int sum=5;
 		int n=arr.length;
-		int dp[][]=new int[n+1][sum+1];
-		for(int[] ele:dp)
-			Arrays.fill(ele,0);
-		for(int ind=0;ind<=n;ind++)
+		int dp[][]=new int[n][sum+1];
+		for(int ind=0;ind<n;ind++)
 			dp[ind][0]=1;
-		for(int index=1;index<=n;index++)
+		dp[0][arr[0]]=1;
+		for(int index=1;index<n;index++)
 		{
 			for(int target=1;target<=sum;target++)
 			{
 				int take=0,nottake=0;  
-				if(target>=arr[index-1])
-					take=dp[index-1][target-arr[index-1]];
+				if(target>=arr[index])
+					take=dp[index-1][target-arr[index]];
 				nottake=dp[index-1][target];
 				dp[index][target]=take+nottake;
 			}
 		}
-		System.out.println("No.of subsets: "+dp[n][sum]);
+		System.out.println("No.of subsets: "+dp[n-1][sum]);
 	}
 }
