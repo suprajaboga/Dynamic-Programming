@@ -1,8 +1,10 @@
+//Find out maximum value that sums upto the given target. Any weight can be picked only once.
+
 package knapsack;
 
 import java.util.Arrays;
 
-////Recursion		TC : O(2 pow n)		SC : O(recursion stack space)
+//Recursion		TC : O(2 pow n)		SC : O(recursion stack space)
 //public class knapsack 
 //{
 //	public static int print(int index,int tot_weight,int weights[],int values[])
