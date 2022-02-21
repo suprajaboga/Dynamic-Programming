@@ -69,25 +69,25 @@ public class subsetsumequalsk
 	public static void main(String[] args)
 	{
 		int arr[]= {2,2,3};
-		int sum=5;
+		int sum=7;
 		int n=arr.length;
-		boolean dp[][]=new boolean[n+1][sum+1];
+		boolean dp[][]=new boolean[n][sum+1];
 		for(boolean[] ele:dp)
 			Arrays.fill(ele,false);
-		for(int ind=0;ind<=n;ind++)
+		for(int ind=0;ind<n;ind++)
 			dp[ind][0]=true;
-//		dp[0][arr[0]]=true;
-		for(int index=1;index<=n;index++)
+		dp[0][arr[0]]=true;
+		for(int index=1;index<n;index++)
 		{
 			for(int target=1;target<=sum;target++)
 			{
 				boolean take=false,nottake=false;  
-				if(target>=arr[index-1])
-					take=dp[index-1][target-arr[index-1]];
+				if(target>=arr[index])
+					take=dp[index-1][target-arr[index]];
 				nottake=dp[index-1][target];
 				dp[index][target]=(take||nottake);
 			}
 		}
-		System.out.println((dp[n][sum]==true)?"Subsequence found":"Subsequence not found");
+		System.out.println((dp[n-1][sum]==true)?"Subsequence found":"Subsequence not found");
 	}
 }
