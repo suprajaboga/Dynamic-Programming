@@ -3,72 +3,70 @@ package countsubsetswithsumk;
 import java.util.Arrays;
 
 //Recursion 	TC: O(2 pow n)		SC: O(recursion stack space)
-//public class countsubsetswithsumk 
-//{
-//	public static int print(int index,int sum,int arr[])
-//	{
-//		if(sum==0)
-//			return 1;
-//		if(index==0)
-//		{
-//			if(arr[0]==sum)
-//				return 1;
-//			else
-//				return 0;
-//		}
-//		int nottake=print(index-1,sum,arr);
-//		int take=0;
-//		if(arr[0]<=sum)
-//			take=print(index-1,sum-arr[index],arr);
-//		return take+nottake;
-//		
-//	}
-//	public static void main(String[] args) 
-//	{
-//		int arr[]= {1,2,3,3};
-//		int n=arr.length;
-//		int sum=6;
-//		System.out.println("No of subsets: "+print(n-1,sum,arr));
-//	}
-//
-//}
+public class countsubsetswithsumk 
+{
+	public static int print(int index,int sum,int arr[])
+	{
+		if(sum==0)
+			return 1;
+		if(index==0)
+		{
+			if(arr[0]==sum)
+				return 1;
+			else
+				return 0;
+		}
+		int nottake=print(index-1,sum,arr);
+		int take=0;
+		if(arr[0]<=sum)
+			take=print(index-1,sum-arr[index],arr);
+		return take+nottake;
+		
+	}
+	public static void main(String[] args) 
+	{
+		int arr[]= {1,2,3,3};
+		int n=arr.length;
+		int sum=6;
+		System.out.println("No of subsets: "+print(n-1,sum,arr));
+	}
+}
 
 
 //Memoization		TC: O(n*sum)	SC: O(n*sum) + recursion stack space
-//public class countsubsetswithsumk 
-//{
-//	public static int print(int index,int sum,int arr[],int dp[][])
-//	{
-//		if(sum==0)
-//			return 1;
-//		if(index==0)
-//		{
-//			if(arr[0]==sum)
-//				return 1;
-//			else
-//				return 0;
-//		}
-//		if(dp[index][sum]!=-1)
-//			return dp[index][sum];
-//		int nottake=print(index-1,sum,arr,dp);
-//		int take=0;
-//		if(arr[0]<=sum)
-//			take=print(index-1,sum-arr[index],arr,dp);
-//		return dp[index][sum]=take+nottake;
-//		
-//	}
-//	public static void main(String[] args) 
-//	{
-//		int arr[]= {1,2,3};
-//		int n=arr.length;
-//		int sum=3;
-//		int dp[][]=new int[n][sum+1];
-//		for(int[] ele:dp)
-//			Arrays.fill(ele, 0);
-//		System.out.println("No of subsets: "+print(n-1,sum,arr,dp));
-//	}
-//
-//}
+public class countsubsetswithsumk 
+{
+	public static int print(int index,int sum,int arr[],int dp[][])
+	{
+		if(sum==0)
+			return 1;
+		if(index==0)
+		{
+			if(arr[0]==sum)
+				return 1;
+			else
+				return 0;
+		}
+		if(dp[index][sum]!=-1)
+			return dp[index][sum];
+		int nottake=print(index-1,sum,arr,dp);
+		int take=0;
+		if(arr[0]<=sum)
+			take=print(index-1,sum-arr[index],arr,dp);
+		return dp[index][sum]=take+nottake;
+		
+	}
+	public static void main(String[] args) 
+	{
+		int arr[]= {1,2,3};
+		int n=arr.length;
+		int sum=3;
+		int dp[][]=new int[n][sum+1];
+		for(int[] ele:dp)
+			Arrays.fill(ele, 0);
+		System.out.println("No of subsets: "+print(n-1,sum,arr,dp));
+	}
+}
 
 
 //Tabulation 	TC: O(n*sum)	SC: O(n*sum), here no recursion stack space required
