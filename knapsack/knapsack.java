@@ -1,3 +1,5 @@
+//0/1 knapsack problem. Return the maximum value of the weights. Each weight can  be chosen only once. Finally, the weights we've should be equal to the given knapsack weight
+
 package knapsack;
 
 import java.util.Arrays;
@@ -70,7 +72,7 @@ import java.util.Arrays;
 //{
 //public static void main(String[] args) 
 //{
-//	int n=3;
+//	int n=4;
 //	int weights[]= {1,3,4,5};
 //	int values[]= {1,4,5,7};
 //	int tot_weight=7;
@@ -99,7 +101,7 @@ public class knapsack
 {
 public static void main(String[] args) 
 {
-	int n=3;
+	int n=4;
 	int weights[]= {1,3,4,5};
 	int values[]= {1,4,5,7};
 	int tot_weight=7;
