@@ -7,60 +7,60 @@ package subsetsumequalsk;
 import java.util.Arrays;
 
 //Recursion			TC: O(2 pow n)		SC: O(n) i.e., recursion stack space
-//public class subsetsumequalsk 
-//{
-//	public static boolean func(int index,int target,int arr[])
-//	{
-//		boolean take=false,nottake=false;
-//		if(target==0)
-//			return true;
-//		if(index==0)
-//			return (arr[0]==target);
-//		if(target>=arr[index])
-//			take=func(index-1,target-arr[index],arr);
-//		nottake=func(index-1,target,arr);
-//		return (take||nottake);
-//	}
-//	public static void main(String[] args)
-//	{
-//		int arr[]= {2,3,1,1};
-//		int target=19;
-//		int n=arr.length;
-//		boolean result=func(n-1,target,arr);
-//		System.out.println((result==true)?"Subsequence found":"Subsequence not found");
-//	}
-//}
+public class subsetsumequalsk 
+{
+	public static boolean func(int index,int target,int arr[])
+	{
+		boolean take=false,nottake=false;
+		if(target==0)
+			return true;
+		if(index==0)
+			return (arr[0]==target);
+		if(target>=arr[index])
+			take=func(index-1,target-arr[index],arr);
+		nottake=func(index-1,target,arr);
+		return (take||nottake);
+	}
+	public static void main(String[] args)
+	{
+		int arr[]= {2,3,1,1};
+		int target=19;
+		int n=arr.length;
+		boolean result=func(n-1,target,arr);
+		System.out.println((result==true)?"Subsequence found":"Subsequence not found");
+	}
+}
 
 
-//memoization		TC : O(n*target)		SC : O(n*m) + O(recursion stack space)
-//public class subsetsumequalsk 
-//{
-//	public static boolean func(int index,int target,int arr[],boolean dp[][])
-//	{
-//		boolean take=false,nottake=false;
-//		if(target==0)
-//			return true;
-//		if(index==0)
-//			return (arr[0]==target);
-//		if(dp[index][target]!=false)
-//			return dp[index][target];
-//		if(target>=arr[index])
-//			take=func(index-1,target-arr[index],arr,dp);
-//		nottake=func(index-1,target,arr,dp);
-//		return dp[index][target]=(take||nottake);
-//	}
-//	public static void main(String[] args)
-//	{
-//		int arr[]= {2,3,1,1};
-//		int target=14;
-//		int n=arr.length;
-//		boolean dp[][]=new boolean[n][target+1];
-//		for(boolean[] ele:dp)
-//			Arrays.fill(ele,false);
-//		boolean result=func(n-1,target,arr,dp);
-//		System.out.println((result==true)?"Subsequence found":"Subsequence not found");
-//	}
-//}
+//Memoization		TC : O(n*target)		SC : O(n*m) + O(recursion stack space)
+public class subsetsumequalsk 
+{
+	public static boolean func(int index,int target,int arr[],boolean dp[][])
+	{
+		boolean take=false,nottake=false;
+		if(target==0)
+			return true;
+		if(index==0)
+			return (arr[0]==target);
+		if(dp[index][target]!=false)
+			return dp[index][target];
+		if(target>=arr[index])
+			take=func(index-1,target-arr[index],arr,dp);
+		nottake=func(index-1,target,arr,dp);
+		return dp[index][target]=(take||nottake);
+	}
+	public static void main(String[] args)
+	{
+		int arr[]= {2,3,1,1};
+		int target=14;
+		int n=arr.length;
+		boolean dp[][]=new boolean[n][target+1];
+		for(boolean[] ele:dp)
+			Arrays.fill(ele,false);
+		boolean result=func(n-1,target,arr,dp);
+		System.out.println((result==true)?"Subsequence found":"Subsequence not found");
+	}
+}
 
 
 //Tabulation
