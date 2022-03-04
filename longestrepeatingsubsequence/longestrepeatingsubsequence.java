@@ -1,4 +1,5 @@
-//same as longest common subsequence but minor change in step 32
+//same as longest common subsequence but minor change in step 25, that index should not be same
+
 
 package longestrepeatingsubsequence;
 
