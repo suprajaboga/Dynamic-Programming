@@ -1,3 +1,5 @@
+//same as longest common subsequence but minor change in step 32
+
 package longestrepeatingsubsequence;
 
 import java.util.Arrays;
