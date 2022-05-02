@@ -33,7 +33,7 @@ public class largestdivisiblesubset
           maxi = Math.max(maxi, dp[ind]);
       }
       Collections.sort(list);
-      System.out.println(maxi);
-      System.out.println(list);
+      System.out.println("Length of largest divisible subset: " + maxi);
+      System.out.println("Largest divisible subset: " + list);
     }
 }
